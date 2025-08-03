@@ -5,7 +5,7 @@ An AI-powered, interactive chatbot that helps users check symptoms and suggests 
 
 #### 💊 Smart Suggestions: Provides diagnosis and medicine recommendations.
 
-### 🧠 Trained Database: Covers 20+ symptoms including:
+### 🧠 Trained Database: Covers 78+ symptoms including:
 
 Fever, Headache, Cough, Diarrhea, Sore throat
 
