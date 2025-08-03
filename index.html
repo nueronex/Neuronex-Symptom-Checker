@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Symptom Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout-wrapper">
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1>🩺 Neuronex Symptom Checker</h1>
+        <p>Your AI-powered health assistant Powered by Neuronex </p>
+      </header>
+
+      <main id="chat-box" class="chat-box">
+        <!-- Messages will be injected here -->
+      </main>
+
+      <section class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type your symptoms here..." />
+        <button onclick="sendMessage()">Send</button>
+      </section>
+    </div>
+
+    <footer class="footer-note">
+      <p>⚠ For emergencies, always consult a doctor. This is an AI assistant only.</p>
+    </footer>
+  </div>
+  <div class="medical-bg">
+  <img src="https://img.icons8.com/ios-filled/50/heart-with-pulse.png" class="medical-icon" style="left: 5%; animation-delay: 0s;" />
+  <img src="https://img.icons8.com/ios-filled/50/stethoscope.png" class="medical-icon" style="left: 20%; animation-delay: 4s;" />
+  <img src="https://img.icons8.com/ios-filled/50/dna.png" class="medical-icon" style="left: 35%; animation-delay: 2s;" />
+  <img src="https://img.icons8.com/ios-filled/50/hospital.png" class="medical-icon" style="left: 60%; animation-delay: 6s;" />
+  <img src="https://img.icons8.com/ios-filled/50/thermometer.png" class="medical-icon" style="left: 75%; animation-delay: 8s;" />
+  <img src="https://img.icons8.com/ios-filled/50/pill.png" class="medical-icon" style="left: 90%; animation-delay: 10s;" />
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
