@@ -342,6 +342,312 @@ function getDiagnosisWithMedicine(input) {
     response: "Contagious skin infection caused by fungus.",
     medicine: "Clotrimazole cream, Terbinafine cream."
   }
+  const knowledgeBase = [
+  // 1
+  {
+    keywords: ["bukhar", "fever", "high temperature", "thand lagna", "chills"],
+    response: "Lagta hai aapko bukhar hai, jo viral ya bacterial infection se ho sakta hai. Paani zyada piyein, rest karein aur temperature monitor karein.",
+    medicine: "Paracetamol (Crocin, Calpol) – har 6 ghante me zarurat ke hisaab se."
+  },
+  // 2
+  {
+    keywords: ["sir dard", "headache", "migraine", "dimaag dard", "pain in head"],
+    response: "Ye stress headache ya migraine ho sakta hai. Shaant aur andhera kamra me rest karein.",
+    medicine: "Ibuprofen (Brufen) ya Paracetamol. Zyada mat lein."
+  },
+  // 3
+  {
+    keywords: ["khansi", "dry cough", "wet cough", "khaansi"],
+    response: "Khansi sardi, flu ya throat infection ki wajah se ho sakti hai. Garam paani ya chai piyein.",
+    medicine: "Benadryl (dry cough) ya Ascoril (wet cough)."
+  },
+  // 4
+  {
+    keywords: ["gale me dard", "sore throat", "throat pain", "gala kharab"],
+    response: "Garam namak wale paani se gargle karein, thanda khana-peena avoid karein.",
+    medicine: "Strepsils lozenges ya Betadine Gargle."
+  },
+  // 5
+  {
+    keywords: ["pet dard", "stomach pain", "abdominal pain", "pet me jalan"],
+    response: "Gas, indigestion ya infection ho sakta hai.",
+    medicine: "Gelusil, Eno ya Dicyclomine (Spasmo-Proxyvon)."
+  },
+  // 6
+  {
+    keywords: ["ulti", "vomiting", "nausea", "matli"],
+    response: "Zyada khane, kharab khane ya infection ki wajah se ho sakta hai. Dheere-dheere paani piyein.",
+    medicine: "Ondansetron (Emeset)."
+  },
+  // 7
+  {
+    keywords: ["dast", "diarrhea", "loose motion", "pet kharab"],
+    response: "Doodh aur spicy khana avoid karein. ORS se hydrated rahein.",
+    medicine: "ORS (Electral), Loperamide (Imodium – agar bahut zyada na ho)."
+  },
+  // 8
+  {
+    keywords: ["sardi", "cold", "runny nose", "naak behna"],
+    response: "Normal sardi hai. Rest karein, garam paani piyein, Vitamin C lein.",
+    medicine: "Cetrizine, D-Cold Total."
+  },
+  // 9
+  {
+    keywords: ["thakan", "body pain", "fatigue", "tiredness", "kamzori"],
+    response: "Viral fever, overwork ya kam sleep ki wajah se ho sakta hai. Rest karein.",
+    medicine: "Paracetamol, multivitamin supplements."
+  },
+  // 10
+  {
+    keywords: ["acidity", "pet me jalan", "heartburn", "indigestion"],
+    response: "Teliya aur spicy food avoid karein. Khane ke turant baad na letein.",
+    medicine: "Digene, Pantoprazole (Pantocid)."
+  },
+  // 11
+  {
+    keywords: ["daane", "rash", "khujli", "itching", "skin allergy"],
+    response: "Ye allergic reaction ya skin infection ho sakta hai.",
+    medicine: "Levocetirizine, Cetrizine, calamine lotion."
+  },
+  // 12
+  {
+    keywords: ["ghutno me dard", "joint pain", "knee pain", "jodon me dard", "body stiffness"],
+    response: "Arthritis ya fatigue ki wajah se ho sakta hai. Halka stretch karein.",
+    medicine: "Paracetamol, Ibuprofen, Volini cream."
+  },
+  // 13
+  {
+    keywords: ["saans me dikkat", "covid", "corona", "loss of taste", "breathing issue"],
+    response: "COVID ke symptoms lag rahe hain. Test karein aur isolate ho jaayein.",
+    medicine: "Paracetamol fever ke liye. Doctor se consult karein agar symptoms badh rahe ho."
+  },
+  // 14
+  {
+    keywords: ["seene me dard", "heart attack", "shortness of breath", "chest pain"],
+    response: "Heart attack ho sakta hai! Turant hospital jaayein.",
+    medicine: "Aspirin (agar doctor ne pehle recommend kiya ho), Nitroglycerin doctor ki advice par."
+  },
+  // 15
+  {
+    keywords: ["tb", "tuberculosis", "khoon ki khansi", "persistent cough"],
+    response: "TB ka doubt hai. Chest X-ray aur sputum test karwayein.",
+    medicine: "Doctor ki guidance me Anti-TB medicines (Rifampicin, Isoniazid)."
+  },
+  // 16
+  {
+    keywords: ["aankh me dard", "eye pain", "blurred vision", "red eyes", "ankh me jalan"],
+    response: "Infection, dryness ya allergy ho sakti hai. Screen time kam karein.",
+    medicine: "Lubricating drops (Tears Naturale), Cetrizine."
+  },
+  // 17
+  {
+    keywords: ["kamariya dard", "back pain", "lower back pain", "spine pain"],
+    response: "Muscle strain, posture problem ya slip disc ho sakta hai.",
+    medicine: "Ibuprofen, rest, hot/cold compress."
+  },
+  // 18
+  {
+    keywords: ["daant dard", "tooth pain", "gum pain", "daant me keeda"],
+    response: "Cavity ya infection ho sakta hai. Warm salt water se rinse karein.",
+    medicine: "Ketorolac pain killer, dentist se consult karein."
+  },
+  // 19
+  {
+    keywords: ["kaan dard", "ear pain", "hearing loss", "ear pressure"],
+    response: "Ear infection, wax ya pressure change ki wajah se ho sakta hai.",
+    medicine: "Painkillers, ear drops (ENT doctor ki advice ke baad)."
+  },
+  // 20
+  {
+    keywords: ["gas", "bloating", "pet fulna", "gastritis"],
+    response: "Gas ya indigestion ki wajah se discomfort ho sakta hai.",
+    medicine: "Gelusil, Eno, Ajwain water."
+  },
+  // 21
+  {
+    keywords: ["period pain", "mensuration pain", "cramps", "mahavari me dard"],
+    response: "Period cramps normal hote hain, lekin agar bahut zyada ho to doctor ko dikhaayein.",
+    medicine: "Mefenamic acid (Meftal Spas)."
+  },
+  // 22
+  {
+    keywords: ["naak se khoon", "nose bleeding", "epistaxis"],
+    response: "Dryness ya injury ki wajah se ho sakta hai.",
+    medicine: "Cold compress, saline nasal spray."
+  },
+  // 23
+  {
+    keywords: ["motion sickness", "yatra me ulti", "car sickness"],
+    response: "Travel me dimaag ke balance system disturb ho jaata hai.",
+    medicine: "Dimenhydrinate (Avomine)."
+  },
+  // 24
+  {
+    keywords: ["jalna", "burn injury", "skin burn"],
+    response: "Burn par turant thanda paani daalein, ice direct na lagayein.",
+    medicine: "Silver sulfadiazine cream."
+  },
+  // 25
+  {
+    keywords: ["sujaan", "swelling", "body swelling", "soojan"],
+    response: "Injury, infection ya water retention ki wajah se ho sakta hai.",
+    medicine: "Cold compress, anti-inflammatory medicine."
+  },
+  // 26
+  {
+    keywords: ["allergic sneezing", "continuous chhink", "seasonal allergy"],
+    response: "Pollen, dust ya weather change ki wajah se ho sakta hai.",
+    medicine: "Levocetirizine, steam inhalation."
+  },
+  // 27
+  {
+    keywords: ["baal jhadna", "hair fall", "kamzor baal"],
+    response: "Vitamin deficiency, stress ya hormonal imbalance ki wajah se ho sakta hai.",
+    medicine: "Biotin supplements, mild shampoo."
+  },
+  // 28
+  {
+    keywords: ["ankh phadakna", "eye twitching"],
+    response: "Stress, fatigue ya magnesium deficiency ki wajah se ho sakta hai.",
+    medicine: "Rest, magnesium-rich food."
+  },
+  // 29
+  {
+    keywords: ["loo lagna", "heat stroke", "garami lagna"],
+    response: "Zyada garmi aur dehydration ki wajah se ho sakta hai.",
+    medicine: "ORS, cool place me rest."
+  },
+  // 30
+  {
+    keywords: ["behosh", "chakkar", "fainting"],
+    response: "Low BP, dehydration ya sugar kam hone ki wajah se ho sakta hai.",
+    medicine: "Paani, glucose water."
+  },
+  // 31
+  {
+    keywords: ["hath pair sun hona", "numbness", "tingling"],
+    response: "Nerve compression ya vitamin B12 deficiency ho sakta hai.",
+    medicine: "Vitamin B12 supplements."
+  },
+  // 32
+  {
+    keywords: ["kam sunai dena", "hearing loss", "sunne me dikkat"],
+    response: "Wax build-up, infection ya aging ki wajah se ho sakta hai.",
+    medicine: "Ear drops (wax removal) doctor ki advice par."
+  },
+  // 33
+  {
+    keywords: ["pasina zyada aana", "excessive sweating", "hyperhidrosis"],
+    response: "Anxiety, thyroid ya heat ki wajah se ho sakta hai.",
+    medicine: "Antiperspirant, loose cotton clothes."
+  },
+  // 34
+  {
+    keywords: ["sleep problem", "neend na aana", "insomnia"],
+    response: "Stress ya lifestyle issue ki wajah se ho sakta hai.",
+    medicine: "Chamomile tea, melatonin tablets."
+  },
+  // 35
+  {
+    keywords: ["dil tez dhadakna", "palpitations", "heart racing"],
+    response: "Anxiety, caffeine, ya heart issue ki wajah se ho sakta hai.",
+    medicine: "Calm breathing exercises, doctor consult."
+  },
+  // 36
+  {
+    keywords: ["sujha hua gala", "tonsils", "tonsillitis"],
+    response: "Infection se gala suj sakta hai.",
+    medicine: "Warm salt water gargle, antibiotics (doctor advice)."
+  },
+  // 37
+  {
+    keywords: ["haddi tootna", "fracture", "bone injury"],
+    response: "Bone tootne par turant immobilize karein.",
+    medicine: "Plaster, painkillers."
+  },
+  // 38
+  {
+    keywords: ["kamar ke neeche dard", "sciatica"],
+    response: "Nerve compression ki wajah se dard hota hai.",
+    medicine: "Physiotherapy, Ibuprofen."
+  },
+  // 39
+  {
+    keywords: ["sanse tez chalna", "short breath", "asthma attack"],
+    response: "Asthma ya lung issue ki wajah se ho sakta hai.",
+    medicine: "Inhaler (Salbutamol)."
+  },
+  // 40
+  {
+    keywords: ["bhukh kam lagna", "loss of appetite"],
+    response: "Stress, infection ya digestive problem ki wajah se ho sakta hai.",
+    medicine: "Light diet, multivitamins."
+  }
+];
+// Extended Hinglish symptoms dataset
+const knowledgeBaseExtra = [
+  {
+    keywords: ["gas", "pet mein jalan", "bloating"],
+    response: "Pet mein gas ya bloating ho sakti hai, spicy aur oily khana avoid karo.",
+    medicine: "Antacid (Digene, Eno) ya Simethicone tablets."
+  },
+  {
+    keywords: ["constipation", "kabz", "stool hard"],
+    response: "Kabz ho sakti hai, fiber-rich khana khao aur paani zyada piyo.",
+    medicine: "Isabgol husk ya Lactulose syrup."
+  },
+  {
+    keywords: ["burning urine", "urination pain", "urine mein jalan"],
+    response: "Yeh urinary tract infection ka sign ho sakta hai. Paani zyada piyo.",
+    medicine: "Alkalyzing syrup (Cital), doctor se antibiotic ka advice lo."
+  },
+  {
+    keywords: ["period pain", "menstrual cramps", "mahavari dard"],
+    response: "Periods ke time cramps normal hote hain, lekin bohot zyada dard ho to consult karo.",
+    medicine: "Mefenamic acid (Meftal Spas), hot water bag use karo."
+  },
+  {
+    keywords: ["pimples", "acne", "daane"],
+    response: "Skin pe daane ya acne ho sakte hain oily skin, hormones ya infection se.",
+    medicine: "Salicylic acid face wash, Clindamycin gel."
+  },
+  {
+    keywords: ["hair fall", "bal girna"],
+    response: "Bal girna stress, nutrition ya hormonal problem se ho sakta hai.",
+    medicine: "Biotin supplements, gentle shampoo, oil massage."
+  },
+  {
+    keywords: ["dizziness", "chakkar", "lightheaded"],
+    response: "Chakkar kam khoon, dehydration ya low BP se ho sakta hai.",
+    medicine: "ORS piyo, iron-rich diet lo, rest karo."
+  },
+  {
+    keywords: ["burn injury", "jalna", "skin burn"],
+    response: "Burn ke case mein turant thande paani se wash karo, ice directly mat lagao.",
+    medicine: "Silver sulfadiazine cream (Burnol), sterile gauze."
+  },
+  {
+    keywords: ["allergy", "sneeze", "naak band"],
+    response: "Allergy dust, pollen ya food se ho sakti hai.",
+    medicine: "Cetrizine tablet, steam inhalation."
+  },
+  {
+    keywords: ["insomnia", "neend na aana", "sleep problem"],
+    response: "Neend na aana stress, screen time ya caffeine se ho sakta hai.",
+    medicine: "Warm milk piyo, melatonin supplements (doctor advice)."
+  },
+  {
+    keywords: ["swelling", "soojan", "inflammation"],
+    response: "Soojan injury, infection ya water retention se ho sakti hai.",
+    medicine: "Cold compression, Ibuprofen (if needed)."
+  },
+  {
+    keywords: ["weight loss", "wazan kam", "bhook kam"],
+    response: "Achanak wazan kam hona TB, diabetes ya thyroid ka sign ho sakta hai.",
+    medicine: "Doctor se consult karo for proper tests."
+  }
+];
+
   ];
 
   for (let item of knowledgeBase) {
