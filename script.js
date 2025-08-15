@@ -122,7 +122,226 @@ function getDiagnosisWithMedicine(input) {
       response: "Could be ear infection, wax buildup, or Eustachian tube issue.",
       medicine: "Painkillers, ear drops (if advised by ENT specialist)."
     }
-    
+     {
+      keywords: ["asthma", "wheezing", "breathing difficulty"],
+      response: "Asthma symptoms – avoid triggers and use inhalers as prescribed.",
+      medicine: "Salbutamol inhaler (Ventolin), corticosteroid inhalers (Fluticasone) under medical advice."
+    },
+    {
+      keywords: ["allergy", "sneezing", "itchy nose"],
+      response: "Likely allergic rhinitis. Avoid dust, pollen, and strong smells.",
+      medicine: "Antihistamines (Cetrizine, Levocetirizine), nasal spray (Fluticasone)."
+    },
+    {
+      keywords: ["dehydration", "dry mouth", "dizziness"],
+      response: "Loss of fluids and electrolytes. Rehydrate immediately.",
+      medicine: "ORS solution, coconut water, electrolyte powder."
+    },
+    {
+      keywords: ["burn", "skin burn", "scald"],
+      response: "Cool the area under running water, avoid ice directly.",
+      medicine: "Silver sulfadiazine cream, pain relievers (Paracetamol)."
+    },
+    {
+      keywords: ["sprain", "swelling", "twisted ankle"],
+      response: "Soft tissue injury – follow R.I.C.E. method (Rest, Ice, Compression, Elevation).",
+      medicine: "Painkillers (Ibuprofen), topical analgesic creams."
+    },
+    {
+      keywords: ["menstrual pain", "period cramps", "dysmenorrhea"],
+      response: "Menstrual cramps are common; heat pads can help.",
+      medicine: "Mefenamic acid (Meftal-Spas), Ibuprofen."
+    },
+    {
+      keywords: ["pregnancy nausea", "morning sickness"],
+      response: "Common in early pregnancy. Eat small, frequent meals.",
+      medicine: "Vitamin B6 supplements, ginger tea (avoid medicines without doctor’s advice)."
+    },
+    {
+      keywords: ["stroke", "face drooping", "arm weakness", "slurred speech"],
+      response: "Possible stroke – call emergency services immediately!",
+      medicine: "Emergency hospital care – time-sensitive clot-busting drugs."
+    },
+    {
+      keywords: ["diabetes", "high blood sugar", "frequent urination", "excessive thirst"],
+      response: "High blood sugar levels – maintain diet and take medicines regularly.",
+      medicine: "Metformin, Insulin (if prescribed by doctor)."
+    },
+    {
+      keywords: ["low blood sugar", "hypoglycemia", "sweating", "confusion"],
+      response: "Low sugar – take something sweet immediately.",
+      medicine: "Glucose powder, fruit juice, candy."
+    },
+    {
+      keywords: ["hypertension", "high blood pressure"],
+      response: "Maintain a low-salt diet, exercise, and manage stress.",
+      medicine: "Amlodipine, Losartan (only under prescription)."
+    },
+    {
+      keywords: ["urinary burning", "UTI", "pain while urinating"],
+      response: "Possible urinary tract infection – drink more water.",
+      medicine: "Cranberry supplements, Nitrofurantoin (if bacterial, prescription needed)."
+    },
+    {
+      keywords: ["insomnia", "trouble sleeping"],
+      response: "Practice good sleep hygiene – avoid caffeine before bed.",
+      medicine: "Melatonin supplements (if prescribed), herbal teas like chamomile."
+    },
+    {
+      keywords: ["anemia", "low hemoglobin", "fatigue", "pale skin"],
+      response: "Likely iron deficiency – include iron-rich foods.",
+      medicine: "Iron tablets (Ferrous sulfate), Vitamin C to aid absorption."
+    },
+    {
+      keywords: ["depression", "persistent sadness", "loss of interest"],
+      response: "Seek mental health support, maintain routine, talk to a therapist.",
+      medicine: "Antidepressants (SSRIs) only under psychiatric supervision."
+    },
+    {
+      keywords: ["heat stroke", "high body temperature", "confusion in hot weather"],
+      response: "Move to a cool place, hydrate, and rest.",
+      medicine: "ORS, IV fluids (in hospital)."
+    },
+    {
+      keywords: ["food poisoning", "stomach cramps", "vomiting after eating"],
+      response: "Likely due to contaminated food – hydrate and rest.",
+      medicine: "ORS, probiotics, Ondansetron for vomiting."
+    },
+    {
+      keywords: ["fainting", "loss of consciousness", "blackout"],
+      response: "Could be due to low BP, dehydration, or sudden shock.",
+      medicine: "Lie flat, elevate legs, drink fluids."
+    },
+    {
+      keywords: ["motion sickness", "nausea while traveling"],
+      response: "Avoid reading during travel, sit in a stable position.",
+      medicine: "Dimenhydrinate (Dramamine), Meclizine."
+    }
+    {
+    keywords: ["sinus", "sinusitis", "facial pain", "blocked nose"],
+    response: "Likely sinus infection or inflammation. Steam inhalation may help.",
+    medicine: "Steam inhalation, nasal spray (Oxymetazoline short term), Amoxicillin if bacterial."
+  },
+  {
+    keywords: ["acid reflux", "gastroesophageal reflux", "GERD"],
+    response: "Acid flows back into the esophagus causing burning sensation.",
+    medicine: "Antacids, Omeprazole, Pantoprazole."
+  },
+  {
+    keywords: ["gout", "toe pain", "joint swelling"],
+    response: "Excess uric acid buildup can cause gout attacks.",
+    medicine: "NSAIDs (Ibuprofen), Allopurinol (prescription), dietary changes."
+  },
+  {
+    keywords: ["hair fall", "hair loss", "bald patches"],
+    response: "Can be due to stress, deficiencies, or hormonal imbalance.",
+    medicine: "Biotin supplements, Minoxidil topical solution."
+  },
+  {
+    keywords: ["dandruff", "scalp itching", "flaky scalp"],
+    response: "Fungal overgrowth or dry skin on scalp.",
+    medicine: "Ketoconazole shampoo, Zinc pyrithione shampoo."
+  },
+  {
+    keywords: ["mouth ulcer", "canker sore", "oral sore"],
+    response: "Painful sores in mouth – often stress or vitamin related.",
+    medicine: "Topical gels (Benzocaine), Vitamin B complex."
+  },
+  {
+    keywords: ["bleeding gums", "gum swelling"],
+    response: "Gum disease or vitamin deficiency.",
+    medicine: "Vitamin C, Chlorhexidine mouthwash."
+  },
+  {
+    keywords: ["kidney stone", "severe flank pain", "blood in urine"],
+    response: "Mineral buildup in kidneys causing pain.",
+    medicine: "Painkillers, hydration, Tamsulosin (doctor’s advice)."
+  },
+  {
+    keywords: ["jaundice", "yellow eyes", "yellow skin"],
+    response: "Excess bilirubin from liver issues.",
+    medicine: "Hospital evaluation, supportive care."
+  },
+  {
+    keywords: ["hepatitis", "liver infection"],
+    response: "Viral hepatitis affects liver health.",
+    medicine: "Rest, antivirals if needed, avoid alcohol."
+  },
+  {
+    keywords: ["measles", "red rash", "high fever", "cough"],
+    response: "Highly contagious viral infection.",
+    medicine: "Supportive care, Vitamin A supplementation."
+  },
+  {
+    keywords: ["chickenpox", "itchy rash", "blisters"],
+    response: "Viral infection with fluid-filled blisters.",
+    medicine: "Calamine lotion, Paracetamol, avoid scratching."
+  },
+  {
+    keywords: ["malaria", "shivering", "intermittent fever"],
+    response: "Mosquito-borne parasitic infection.",
+    medicine: "Antimalarial drugs (Artemisinin-based combination therapy)."
+  },
+  {
+    keywords: ["dengue", "platelet drop", "fever with pain behind eyes"],
+    response: "Viral infection spread by mosquitoes.",
+    medicine: "Paracetamol, hydration, platelet monitoring."
+  },
+  {
+    keywords: ["typhoid", "prolonged fever", "abdominal pain"],
+    response: "Bacterial infection from contaminated food/water.",
+    medicine: "Antibiotics (Ciprofloxacin/Azithromycin), hydration."
+  },
+  {
+    keywords: ["cholera", "profuse watery diarrhea"],
+    response: "Severe bacterial infection causing dehydration.",
+    medicine: "ORS, antibiotics (Doxycycline), IV fluids."
+  },
+  {
+    keywords: ["stroke heat", "heat exhaustion", "hot weather illness"],
+    response: "Body overheated due to high temperature.",
+    medicine: "Cool down immediately, ORS, IV fluids if severe."
+  },
+  {
+    keywords: ["panic attack", "rapid heartbeat", "shortness of breath"],
+    response: "Sudden intense anxiety or fear episode.",
+    medicine: "Deep breathing, relaxation, Benzodiazepines (short-term, prescription)."
+  },
+  {
+    keywords: ["nosebleed", "epistaxis"],
+    response: "Bleeding from nasal blood vessels – often dryness or trauma.",
+    medicine: "Pinch nose, lean forward, ice pack on bridge of nose."
+  },
+  {
+    keywords: ["fracture", "broken bone", "bone crack"],
+    response: "Bone injury due to trauma.",
+    medicine: "Immobilization, painkillers, orthopedic evaluation."
+  },
+  {
+    keywords: ["burning feet", "foot neuropathy"],
+    response: "Can be due to diabetes or vitamin deficiency.",
+    medicine: "Vitamin B12 supplements, Gabapentin (prescription)."
+  },
+  {
+    keywords: ["sciatica", "leg pain from back", "nerve pain"],
+    response: "Compression of sciatic nerve causing pain.",
+    medicine: "NSAIDs, physiotherapy, muscle relaxants."
+  },
+  {
+    keywords: ["eczema", "skin dryness", "red itchy patches"],
+    response: "Chronic skin condition with inflammation.",
+    medicine: "Moisturizers, Hydrocortisone cream."
+  },
+  {
+    keywords: ["psoriasis", "scaly skin patches"],
+    response: "Autoimmune skin disorder.",
+    medicine: "Topical corticosteroids, Vitamin D analog creams."
+  },
+  {
+    keywords: ["ringworm", "fungal skin infection"],
+    response: "Contagious skin infection caused by fungus.",
+    medicine: "Clotrimazole cream, Terbinafine cream."
+  }
   ];
 
   for (let item of knowledgeBase) {
