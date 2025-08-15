@@ -122,6 +122,7 @@ function getDiagnosisWithMedicine(input) {
       response: "Could be ear infection, wax buildup, or Eustachian tube issue.",
       medicine: "Painkillers, ear drops (if advised by ENT specialist)."
     }
+    
   ];
 
   for (let item of knowledgeBase) {
